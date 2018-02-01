@@ -2,9 +2,34 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Lifting Logs</title>
   </head>
   <body>
-    
+    <header>
+      <h1>Lifting Logs</h1>
+      <h2>GET IT</h2>
+    </header>
+    <nav></nav>
+    <form>
+      <h3 class="form-header">Choose Your Group</h3>
+      <select class="muscle-group">
+        <option value="" class="placeholder">Select Group</option>
+        <option value="legs">Legs</option>
+        <option value="back">Back</option>
+        <option value="chest">Chest</option>
+        <option value="core">Core</option>
+        <option value="arms">Arms</option>
+        <option value="cardio">Cardio</option>
+      </select>
+      <select class="exercise" hidden></select>
+      <input class="user-input weight" type="text" placeholder="Weight" hidden>
+      <input class="user-input reps" type="text" placeholder="Reps" hidden>
+      <button type="button" class="add-it" hidden>Add Set</button>
+    </form>
+    <div class="workout" hidden>
+      <h3>Today's Workout:</h3>
+      <button type="button">Undo</button>
+    </div>
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

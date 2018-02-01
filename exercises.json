@@ -1,0 +1,41 @@
+{
+  "legs": [
+    "SSB Squats",
+    "Barbell Squats",
+    "Front Squats",
+    "Air Squats",
+    "Deadlifts",
+    "Power Cleans",
+    "Leg Curl",
+    "Leg Extensions"
+  ],
+  "back": [
+    "Lat Pull Downs",
+    "Dumbbell Rows",
+    "Cable Rows",
+    "Barbell Rows",
+    "Pull Ups"
+  ],
+  "chest": [
+    "Bench Press",
+    "Incline Bench Press",
+    "Dumbell Press",
+    "Dips",
+    "Push-ups"
+  ],
+  "core": [
+    "Planks",
+    "Sit-ups"
+  ],
+  "arms": [
+    "Tricep Press Down",
+    "Barbell Curls",
+    "Dumbbell Curls",
+    "Overhead Press",
+    "Lateral Shoulder Fly"
+  ],
+  "cardio": [
+    "Running",
+    "Other"
+  ]
+}
