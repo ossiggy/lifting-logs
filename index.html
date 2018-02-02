@@ -22,14 +22,20 @@
         <option value="cardio">Cardio</option>
       </select>
       <select class="exercise" hidden></select>
-      <input class="user-input weight" type="text" placeholder="Weight" hidden>
-      <input class="user-input reps" type="text" placeholder="Reps" hidden>
-      <button type="button" class="add-it" hidden>Add Set</button>
+      <input class="user-input weight" type="number" min=1 placeholder="Weight" hidden>
+      <input class="user-input reps" type="number" min=1 placeholder="Reps" hidden>
+      <button type="button" class="add-set" hidden>Add Set</button>
     </form>
     <div class="workout" hidden>
       <h3>Today's Workout:</h3>
-      <button type="button">Undo</button>
+      <!-- running clock (time workout/option for splits) -->
+      <!-- what kind of workout? -->
+      <!-- separate lifts into different categories -->
+      <!-- make multiplayer mode 2columns -->
+      <!-- increments on input -->
+      <button type="button" class="undo">Undo</button>
     </div>
+    <div class="total"></div>
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
