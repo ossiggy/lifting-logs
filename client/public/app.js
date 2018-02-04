@@ -52,8 +52,14 @@ function addSet(event){
   ).show();
 
   retrieveSetData();
+  nameWorkout(group);
   buildWorkOut(set);
 
+}
+
+function nameWorkout(group){
+  event.preventDefault();
+  $('#workout-name').append(`<h4>${group}</h4>`);
 }
 
 function buildWorkOut(set){
@@ -93,7 +99,9 @@ function removeSet(event){
   child.remove();
   workout.pop();
   showTotalWeight();
+
   if(totalWeight===0){
     $('.total').html('');
   }
+  
 }
