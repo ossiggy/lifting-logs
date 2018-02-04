@@ -3,7 +3,7 @@
 // have some preloaded exercises with the option to add more
 
 $('.muscle-group').on('change', generateExercise);
-$('.add-set').on('click', addSet);
+$('.add-set').on('click', createSet);
 $('.undo').on('click', removeSet);
 
 let totalWeight = 0;
@@ -27,7 +27,7 @@ function generateExercise(event){
   $('.add-set').show();
 }
 
-function addSet(event){
+function createSet(event){
   event.preventDefault();
 
   const group = $('.muscle-group').find(':selected').val();
@@ -47,19 +47,60 @@ function addSet(event){
     return;
   }
   
-  $('.workout').append(
-    `<div class='result'>${exercise}: ${weight}lbs for ${reps} reps</div>`
-  ).show();
+  // $('.workout').append(
+  //   `<div class='result'>${exercise}: ${weight}lbs for ${reps} reps</div>`
+  // ).show();
 
-  retrieveSetData();
+  // retrieveSetData();
   nameWorkout(group);
+  createTable(set);
   buildWorkOut(set);
 
 }
 
+function createTable(set){
+
+  const setTotal = set.weight*set.reps;
+  const existingTable = $('.workout').children(`.${set.exercise}-table`);
+
+  console.log(existingTable);
+
+  if(existingTable.length){
+    existingTable.append(
+      `<tr>
+        <td></td>
+        <td>${set.weight}</td>
+        <td>${set.reps}</td>
+        <td>${setTotal}</td>
+      </tr>
+      `
+    );
+  }
+  if(!existingTable.length){
+    $('.workout').append(
+      `<table class="${set.exercise}-table">
+      <tr>
+        <th>${set.exercise}</th>
+        <th>Weight</th>
+        <th>Reps</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+      <td></td>
+        <td>${set.weight}</td>
+        <td>${set.reps}</td>
+        <td>${setTotal}</td>
+      </tr>
+    </table>`
+    ).show();
+  }
+}
+
 function nameWorkout(group){
   event.preventDefault();
-  $('#workout-name').append(`<h4>${group}</h4>`);
+  if(!$(`.${group}`).length){
+    $('#workout-name').append(`<h4 class=${group}>${group}</h4>`);
+  }
 }
 
 function buildWorkOut(set){
